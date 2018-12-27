@@ -1,7 +1,11 @@
 {
 	"name": "joelwmale/rss-feed-php",
-	"description": "RSS & Atom Feeds for PHP is a very small and easy-to-use library for consuming an RSS and Atom feed",
-	"keywords": ["rss", "atom", "feed"],
+	"description": "RSS Feeds for PHP is a very small, lightweight, and easy-to-use library for consuming an RSS feed.",
+	"keywords": [
+		"rss", 
+		"feed", 
+		"php"
+	],
 	"homepage": "https://github.com/joelwmale/rss-feed-php",
 	"license": "MIT",
 	"authors": [
