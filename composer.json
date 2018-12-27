@@ -1,0 +1,52 @@
+{
+	"name": "joelwmale/rss-feed-php",
+	"description": "RSS & Atom Feeds for PHP is a very small and easy-to-use library for consuming an RSS and Atom feed",
+	"keywords": ["rss", "atom", "feed"],
+	"homepage": "https://github.com/joelwmale/rss-feed-php",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Joel Male",
+			"email": "joel@joelmale.com",
+			"homepage": "https://www.joelmale.com",
+			"role": "Author"
+		}
+	],
+	"require": {
+		"php": "^7.1",
+		"ext-simplexml": "*",
+		"nesbot/carbon": "^2.9"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^7.5"
+	},
+	"autoload": {
+		"classmap": [
+			"src",
+			"src/Exceptions"
+		],
+		"psr-4": {
+			"joelwmale\\RSSFeedPHP\\": "src"
+		}
+	},
+	"autoload-dev": { 
+		"psr-4": {
+			"joelwmale\\RSSFeedPHP\\Tests\\": "tests"
+		}
+	},
+	"scripts": {
+		"test": "vendor/bin/phpunit",
+		"test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0-dev"
+		},
+		"laravel": {
+            "dont-discover": [
+                "joelwmale/rss-feed-php"
+            ]
+        }
+	},
+	"minimum-stability": "stable"
+}
