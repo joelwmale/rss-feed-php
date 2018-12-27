@@ -4,29 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9529e4cf43d23e05838d18d3d5ae57f9",
+    "content-hash": "c64c68d10e5775303f0b6f39985d8d30",
     "packages": [
         {
             "name": "nesbot/carbon",
-            "version": "2.9.1",
+            "version": "1.36.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "99dd27fc02740642884e2aebde312ccca5a0ec3c"
+                "reference": "63da8cdf89d7a5efe43aabc794365f6e7b7b8983"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/99dd27fc02740642884e2aebde312ccca5a0ec3c",
-                "reference": "99dd27fc02740642884e2aebde312ccca5a0ec3c",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/63da8cdf89d7a5efe43aabc794365f6e7b7b8983",
+                "reference": "63da8cdf89d7a5efe43aabc794365f6e7b7b8983",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "*",
-                "php": "^7.1.8",
-                "symfony/translation": "^4.0"
+                "php": ">=5.3.9",
+                "symfony/translation": "~2.6 || ~3.0 || ~4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.1.5"
+                "phpunit/phpunit": "^4.8.35 || ^5.7"
             },
             "suggest": {
                 "friendsofphp/php-cs-fixer": "Needed for the `composer phpcs` command. Allow to automatically fix code style.",
@@ -42,7 +41,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Carbon\\": "src/Carbon/"
+                    "": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -63,7 +62,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-12-25T17:37:52+00:00"
+            "time": "2018-11-22T18:23:02+00:00"
         },
         {
             "name": "symfony/contracts",
