@@ -1,6 +1,5 @@
 # RSS Feeds for PHP
 
-
 [![travis build](https://travis-ci.org/joelwmale/rss-feed-php.svg?branch=master)](https://travis-ci.org/joelwmale/riot-php-api)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -13,7 +12,7 @@ It requires PHP 7.1 or newer with cURL installed on the system, and is licensed 
 Composer:
 
 ```
-php composer.phar require joelwmale/rss-feed-php
+composer require joelwmale/rss-feed-php
 ```
 
 ## Usage
@@ -21,7 +20,7 @@ php composer.phar require joelwmale/rss-feed-php
 Download RSS feed from URL:
 
 ```php
-use joelwmale\RSSFeedPHP\RSSFeedPHP;
+use joelwmale\RSSFeedPHP;
 
 $feed = RSSFeedPHP::load($url);
 ```
@@ -45,7 +44,7 @@ foreach ($feed->item as $item) {
 A helper class is available if you wish to convert it to an array instead:
 
 ```php
-use joelwmale\RSSFeedPHP\RSSFeedPHP;
+use joelwmale\RSSFeedPHP;
 
 $feed = RSSFeedPHP::load($url);
 $feed->toArray();
@@ -54,7 +53,7 @@ $feed->toArray();
 Caching is available by adding the following:
 
 ```php
-use joelwmale\RSSFeedPHP\RSSFeedPHP;
+use joelwmale\RSSFeedPHP;
 
 RSSFeedPHP::$cacheDir = __DIR__ . '/tmp';
 RSSFeedPHP::$cacheExpire = '5 hours';

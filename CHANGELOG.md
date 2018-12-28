@@ -2,7 +2,14 @@
 
 ## [Unreleased]
 
-[unreleased]: https://github.com/joelwmale/rss-feed-php/compare/1.0.1...HEAD
+[unreleased]: https://github.com/joelwmale/rss-feed-php/compare/1.1.0...HEAD
+
+## [1.1.0] - 2018-12-28
+
+### Changed
+- Namespacing is now `joelwmale\RSSFeedPHP`
+
+[1.0.1]: https://github.com/joelwmale/rss-feed-php/compare/1.0.1...1.1.0
 
 ## [1.0.1] - 2018-12-27
 
