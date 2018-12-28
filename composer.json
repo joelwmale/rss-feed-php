@@ -1,5 +1,6 @@
 {
 	"name": "joelwmale/rss-feed-php",
+	"type": "library",
 	"description": "RSS Feeds for PHP is a very small, lightweight, and easy-to-use library for consuming an RSS feed.",
 	"keywords": [
 		"rss", 
@@ -7,6 +8,10 @@
 		"php"
 	],
 	"homepage": "https://github.com/joelwmale/rss-feed-php",
+	"support": {
+        "issues": "https://github.com/joelwmale/rss-feed-php/issues",
+        "source": "https://github.com/joelwmale/rss-feed-php"
+    },
 	"license": "MIT",
 	"authors": [
 		{
@@ -16,13 +21,15 @@
 			"role": "Author"
 		}
 	],
+	"minimum-stability": "dev",
 	"require": {
 		"php": "^7.1",
 		"ext-simplexml": "*",
 		"nesbot/carbon": "^1.26.3"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "^7.5"
+		"phpunit/phpunit": "^7.5",
+		"phpstan/phpstan": "^0.11.0@dev"
 	},
 	"autoload": {
 		"psr-4": {
@@ -35,18 +42,19 @@
 		}
 	},
 	"scripts": {
-		"test": "vendor/bin/phpunit",
-		"test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+		"test": [
+			"@phpunit",
+			"@phpcs"
+		],
+		"phpunit": "vendor/bin/phpunit",
+		"phpcs": "php-cs-fixer fix -v --diff --dry-run",
+		"phpstan": "phpstan analyse --configuration phpstan.neon --level 3 src tests"
 	},
 	"extra": {
-		"branch-alias": {
-			"dev-master": "1.0-dev"
-		},
 		"laravel": {
-            "dont-discover": [
-                "joelwmale/rss-feed-php"
+            "providers": [
+                "RSSFeedPHP\\Laravel\\ServiceProvider"
             ]
         }
-	},
-	"minimum-stability": "stable"
+	}
 }

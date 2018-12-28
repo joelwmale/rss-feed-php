@@ -5,7 +5,7 @@ namespace RSSFeedPHP;
 use Carbon\Carbon;
 use SimpleXMLElement;
 
-use RSSFeedPHP\Exceptions\FeedException;
+use RSSFeedPHP\Exceptions\RSSFeedPHPException;
 
 /**
  * A small, lightweight, and easy-to-use library for consuming an RSS Feed in PHP
@@ -16,7 +16,7 @@ use RSSFeedPHP\Exceptions\FeedException;
  */
 class RSSFeedPHP
 {
-	/** @var int */
+	/** @var string */
 	public static $cacheExpire = '1 day';
 
 	/** @var string */
@@ -32,16 +32,16 @@ class RSSFeedPHP
 	 * @param string $user
 	 * @param string $pass
 	 * 
-	 * @return Feed
+	 * @return RSSFeedPHP
 	 * 
-	 * @throws FeedException
+	 * @throws RSSFeedPHPException
 	 */
 	public static function load($url, $user = null, $pass = null): RSSFeedPHP
 	{	
 		$xml = self::loadXml($url, $user, $pass);
 
 		if (!$xml->channel) {
-			throw new FeedException('Invalid RSS feed.');
+			throw new RSSFeedPHPException('Invalid RSS feed.');
 		}
 
 		return self::fromRss($xml);
@@ -54,9 +54,9 @@ class RSSFeedPHP
 	 * @param string $user optional user name
 	 * @param string $pass optional password
 	 * 
-	 * @return Feed
+	 * @return RSSFeedPHP
 	 * 
-	 * @throws FeedException
+	 * @throws RSSFeedPHPException
 	 */
 	public static function loadRss($url, $user = null, $pass = null): RSSFeedPHP
 	{
@@ -124,7 +124,7 @@ class RSSFeedPHP
 	 */
 	public function __set($name, $value)
 	{
-		throw new Exception("Cannot assign to a read-only property '$name'.");
+		throw new RSSFeedPHPException("Cannot assign to a read-only property '$name'.");
 	}
 
 	/**
@@ -132,7 +132,7 @@ class RSSFeedPHP
 	 * 
 	 * @param SimpleXMLElement $xml
 	 * 
-	 * @return array
+	 * @return string|array
 	 */
 	public function toArray(SimpleXMLElement $xml = null)
 	{
@@ -165,7 +165,7 @@ class RSSFeedPHP
 	 * 
 	 * @return SimpleXMLElement
 	 * 
-	 * @throws FeedException
+	 * @throws RSSFeedPHPException
 	 */
 	private static function loadXml($url, $user, $pass)
 	{
@@ -184,7 +184,7 @@ class RSSFeedPHP
 		} elseif (self::$cacheDir && $data = @file_get_contents($cacheFile)) {
 			// ok
 		} else {
-			throw new FeedException('Cannot load feed.');
+			throw new RSSFeedPHPException('Cannot load feed.');
 		}
 
 		return new SimpleXMLElement($data, LIBXML_NOWARNING | LIBXML_NOERROR);
@@ -193,13 +193,13 @@ class RSSFeedPHP
 	/**
 	 * Process HTTP request.
 	 * 
-	 * @param string
-	 * @param string
-	 * @param string
+	 * @param string $url
+	 * @param string $user
+	 * @param string $pass
 	 * 
-	 * @return string|false
+	 * @return string|null
 	 * 
-	 * @throws FeedException
+	 * @throws RSSFeedPHPException
 	 */
 	private static function httpRequest($url, $user, $pass): ?String
 	{
@@ -223,10 +223,9 @@ class RSSFeedPHP
 
 		} elseif ($user === null && $pass === null) {
 			return file_get_contents($url);
-
-		} else {
-			throw new FeedException('PHP extension CURL is not loaded.');
 		}
+
+		throw new RSSFeedPHPException('PHP extension CURL is not loaded.');
 	}
 
 	/**
