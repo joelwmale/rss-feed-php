@@ -33,7 +33,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"RSSFeedPHP\\": "src/RSSFeedPHP/"
+			"joelwmale\\": "src/RSSFeedPHP/"
 		}
 	},
 	"autoload-dev": { 
