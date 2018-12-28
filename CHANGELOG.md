@@ -9,7 +9,7 @@
 ### Changed
 - Namespacing is now `joelwmale\RSSFeedPHP`
 
-[1.0.1]: https://github.com/joelwmale/rss-feed-php/compare/1.0.1...1.1.0
+[1.1.0]: https://github.com/joelwmale/rss-feed-php/compare/1.0.1...1.1.0
 
 ## [1.0.1] - 2018-12-27
 
