@@ -1,6 +1,6 @@
 <?php
 
-namespace joelwmale\RSSFeedPHP\Tests;
+namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 

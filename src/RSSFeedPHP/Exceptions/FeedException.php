@@ -1,6 +1,6 @@
 <?php
 
-namespace joelwmale\RSSFeedPHP\Exceptions;
+namespace RSSFeedPHP\Exceptions;
 
 use Exception;
 
