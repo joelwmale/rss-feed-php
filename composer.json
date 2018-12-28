@@ -33,7 +33,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"joelwmale\\": "src/RSSFeedPHP/"
+			"joelwmale\\": "src/RSSFeedPHP/",
+			"RSSFeedPHP\\": "src/RSSFeedPHP/"
 		}
 	},
 	"autoload-dev": { 
@@ -53,7 +54,7 @@
 	"extra": {
 		"laravel": {
             "providers": [
-                "RSSFeedPHP\\Laravel\\ServiceProvider"
+                "joelwmale\\Laravel\\ServiceProvider"
             ]
         }
 	}
