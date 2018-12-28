@@ -1,6 +1,6 @@
 <?php
 
-namespace RSSFeedPHP\Laravel;
+namespace joelwmale\Laravel;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {

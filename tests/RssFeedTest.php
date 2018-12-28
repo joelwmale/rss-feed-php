@@ -4,7 +4,7 @@ namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 
-use RSSFeedPHP;
+use joelwmale;
 
 class RssFeedTest extends TestCase {
     

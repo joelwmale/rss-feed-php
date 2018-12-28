@@ -1,11 +1,11 @@
 <?php
 
-namespace RSSFeedPHP;
+namespace joelwmale;
 
 use Carbon\Carbon;
 use SimpleXMLElement;
 
-use RSSFeedPHP\Exceptions\RSSFeedPHPException;
+use joelwmale\Exceptions\RSSFeedPHPException;
 
 /**
  * A small, lightweight, and easy-to-use library for consuming an RSS Feed in PHP
